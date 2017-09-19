@@ -32,8 +32,8 @@ RUN npm install -g bower
 RUN npm install -g grunt
 RUN mkdir -p /TerriaMap
 WORKDIR /TerriaMap
-COPY ./package.json ./
-RUN npm install && npm run gulp
+#COPY ./package.json ./
+#RUN npm install && npm run gulp
 #EXPOSE 3001
 CMD ["/bin/bash"]
 #CMD [ "node", "node_modules/terriajs-server/lib/app.js", "--config-file", "devserverconfig.json" ]
