@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  geoserver:
+    image: kartoza/geoserver
+    restart: always
+    ports:
+      - "3002:8080"
+  terria:
+    image: terria:latest
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - "./:/TerriaMap/"
+    command: bash -c "node node_modules/terriajs-server/lib/app.js --config-file devserverconfig.json"
